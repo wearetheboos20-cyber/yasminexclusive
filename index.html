@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yasmin the Fox</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin:0;
+  font-family:'Cormorant Garamond', serif;
+  background: radial-gradient(circle at top, #4a220d, #000);
+  color:#fff;
+  text-align:center;
+}
+
+.hero {
+  padding:80px 20px 40px;
+}
+
+.hero h1 {
+  font-size:clamp(3rem,8vw,5rem);
+  margin:0;
+}
+
+.hero h1 span {
+  color:#e8bc6a;
+}
+
+.hero p {
+  font-size:1.4rem;
+  opacity:.95;
+  max-width:600px;
+  margin:20px auto;
+}
+
+.image-cta {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  max-width:700px;
+  margin:30px auto;
+}
+
+.img-card {
+  position:relative;
+  height:280px;
+  overflow:hidden;
+  border:1px solid rgba(232,188,106,.6);
+  display:flex;
+  align-items:flex-end;
+  padding:22px;
+  text-align:left;
+  text-decoration:none;
+  color:white;
+}
+
+.img-card img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.img-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.25));
+}
+
+.img-text {
+  position:relative;
+  z-index:2;
+}
+
+.img-title {
+  font-family:'Cinzel';
+  letter-spacing:.25em;
+  font-size:1rem;
+  color:#e8bc6a;
+  margin-bottom:6px;
+}
+
+.img-sub {
+  font-size:1.2rem;
+  color:rgba(255,255,255,.95);
+}
+
+.find {
+  max-width:700px;
+  margin:60px auto;
+  text-align:left;
+}
+
+.find-link {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border:1px solid rgba(232,188,106,.5);
+  padding:22px;
+  margin-bottom:12px;
+  text-decoration:none;
+  color:white;
+}
+
+.find-left {
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.find-icon {
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(232,188,106,.5);
+  color:#e8bc6a;
+  font-size:1.2rem;
+}
+
+.find-title {
+  font-family:'Cinzel';
+  font-size:1rem;
+  letter-spacing:.2em;
+  color:#e8bc6a;
+  margin-bottom:4px;
+}
+
+.find-sub {
+  font-size:1.15rem;
+  color:rgba(255,255,255,.9);
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Yasmin <span>the Fox</span></h1>
+
+  <p>
+    Free-spirited. Bohemian. Curious.<br>
+    The fox you weren’t meant to find.<br>
+    Some stories are public… the rest you unlock.
+  </p>
+
+  <div class="image-cta">
+
+    <a href="#" class="img-card">
+      <img src="fanvue.jpg">
+      <div class="img-overlay"></div>
+      <div class="img-text">
+        <div class="img-title">ENTER YASMIN’S DEN</div>
+        <div class="img-sub">Private. Unfiltered. Unlock the rest.</div>
+      </div>
+    </a>
+
+    <a href="#" class="img-card">
+      <img src="telegram.jpg">
+      <div class="img-overlay"></div>
+      <div class="img-text">
+        <div class="img-title">CHAT ON TELEGRAM</div>
+        <div class="img-sub">Follow the drops. Get closer.</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="find">
+
+  <a href="#" class="find-link">
+    <div class="find-left">
+      <div class="find-icon"><i class="fa-solid fa-crown"></i></div>
+      <div>
+        <div class="find-title">FANVUE</div>
+        <div class="find-sub">Unlock everything</div>
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="find-link">
+    <div class="find-left">
+      <div class="find-icon"><i class="fa-brands fa-telegram"></i></div>
+      <div>
+        <div class="find-title">TELEGRAM</div>
+        <div class="find-sub">Private drops</div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+</body>
+</html>
