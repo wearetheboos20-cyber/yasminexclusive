@@ -62,6 +62,21 @@ body::after {
     linear-gradient(175deg, #1e1004 0%, #0c0a08 55%, #10080a 100%);
 }
 
+/* HERO PHOTO — Yasmin, anchored right; text sits in open left space */
+.hero-photo {
+  position: absolute; inset: 0;
+  background-image: url("hero_web.jpg");
+  background-size: cover;
+  background-position: right center;
+  z-index: 1;
+}
+.hero-photo::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, #0c0a08 0%, rgba(12,10,8,.86) 30%, rgba(12,10,8,.45) 55%, rgba(12,10,8,.08) 78%, transparent 100%),
+    linear-gradient(0deg, #0c0a08 0%, transparent 28%);
+}
+
 .embers { position:absolute; inset:0; pointer-events:none; }
 .ep {
   position:absolute;
@@ -462,7 +477,7 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
 }
 
 .hero-cta { margin-top:2px !important; }
-.hero-cta .btn-main { display:none !important; }
+.hero-cta .btn-main { display:inline-flex !important; }
 .hero-cta .btn-ghost {
   font-size:.72rem !important;
   color:rgba(236,223,200,.72) !important;
@@ -479,6 +494,11 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
 
 @media(max-width:580px){
   .hero { padding:28px 16px 46px !important; }
+  .hero-photo { background-position: 72% center; }
+  .hero-photo::after {
+    background:
+      linear-gradient(180deg, rgba(12,10,8,.5) 0%, rgba(12,10,8,.72) 45%, rgba(12,10,8,.92) 100%) !important;
+  }
   .hero-name { font-size:clamp(2.9rem,15vw,4.6rem) !important; }
   .hero-bio { font-size:clamp(1.24rem,5vw,1.5rem) !important; line-height:1.42 !important; }
   .image-cta { grid-template-columns:1fr !important; width:min(440px,94vw) !important; gap:18px !important; margin-top:20px !important; }
@@ -628,11 +648,14 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
 }
 
 .hero-cta {
-  margin-top:0 !important;
+  margin-top:14px !important;
+  gap:20px !important;
 }
 
 .hero-cta .btn-main {
-  display:none !important;
+  display:inline-flex !important;
+  margin-top:8px !important;
+  margin-bottom:6px !important;
 }
 
 .hero-cta .btn-ghost {
@@ -764,6 +787,44 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
   }
 }
 
+.hero-bio-quiet {
+  display:block;
+  font-size:.62em;
+  font-style:normal;
+  font-family:'Cinzel',serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(232,188,106,.72);
+  margin-top:22px;
+  line-height:1.5;
+}
+
+/* DEEPER — cards section after the myth */
+.deeper {
+  max-width:1080px;
+  margin:0 auto;
+  padding:20px 24px 90px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.deeper .image-cta {
+  animation:none !important;
+  opacity:1 !important;
+  margin-top:34px !important;
+}
+
+/* Desktop: text sits left, in the open water/sky space of the photo */
+@media(min-width:781px){
+  .hero { align-items: flex-start; padding-left: 7vw; padding-right: 50vw; }
+  .hero-content { text-align: left; align-items: flex-start; }
+  .hero-content .hero-name,
+  .hero-content .hero-bio { text-align: left; }
+  .hero-content .hero-cta { align-items: flex-start; }
+  .hero-content .rune-ring { margin-left: 0; }
+  .hero-name em { display: block; }
+}
+
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -787,6 +848,7 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
 <!-- HERO -->
 <section class="hero">
   <div class="hero-sky"></div>
+  <div class="hero-photo"></div>
   <div class="embers" id="embers"></div>
 
   <!-- Kitsune SVG silhouette -->
@@ -815,32 +877,12 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
       Yasmin<em>the Fox</em>
     </h1>
     <p class="kanji">九尾の狐 &nbsp;·&nbsp; Kitsune</p>
-    <p class="hero-bio">Free-spirited. Bohemian. Curious.<br>The fox you weren’t meant to find.<br>Some stories are public… the rest you unlock.</p>
-    <div class="image-cta">
-      <a target="_blank" rel="noopener" href="https://www.fanvue.com/yasmin_the_fox" class="img-card fanvue">
-        <div class="img-photo"></div>
-        <div class="img-text">
-          <div class="img-title">Enter Yasmin’s Den</div>
-          <div class="img-sub">Private. Unfiltered. Unlock the rest.</div>
-        </div>
-      </a>
-
-      <a target="_blank" rel="noopener" href="https://t.me/yasmin_da_fox" class="img-card telegram">
-        <div class="img-photo"></div>
-        <div class="img-text">
-          <div class="img-title">Chat on Telegram</div>
-          <div class="img-sub">Follow the drops. Get closer.</div>
-        </div>
-      </a>
-    </div>
+    <p class="hero-bio">She writes the parts people<br>try not to say out loud.<br><span class="hero-bio-quiet">A fox. A writer. Two worlds, one tail at a time.</span></p>
 
     <div class="hero-cta">
-      <a target="_blank" rel="noopener" href="https://www.fanvue.com/yasmin_the_fox" class="btn-main">🦊 &nbsp;Enter the Den</a>
-      <a target="_blank" rel="noopener" href="https://t.me/yasmin_da_fox" class="btn-main">✦ &nbsp;Join Telegram</a>
-      <a target="_blank" rel="noopener" href="https://books2read.com/yasmin_reid" class="btn-ghost">Read her fiction →</a>
+      <a target="_blank" rel="noopener" href="https://books2read.com/yasmin_reid" class="btn-main">✦ &nbsp;Read Her Fiction</a>
+      <a href="#myth" class="btn-ghost">The story beneath the story →</a>
     </div>
-
-
   </div>
 
   <div class="scroll-hint">
@@ -850,7 +892,7 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
 </section>
 
 <!-- LORE -->
-<section class="lore">
+<section class="lore" id="myth">
   <div class="sec-tag reveal">The Myth</div>
   <blockquote class="lore-pull reveal">
     In Japanese folklore, the kitsune grows a new tail<br>
@@ -866,6 +908,28 @@ footer p { font-family:'Cinzel',serif; font-size:.5rem; letter-spacing:.25em; co
     <span class="t">⌇</span><span class="t">⌇</span><span class="t">⌇</span>
     <span class="t">⌇</span><span class="t">⌇</span><span class="t">⌇</span>
     <span class="t">⌇</span><span class="t">⌇</span><span class="t">⌇</span>
+  </div>
+</section>
+
+<!-- DEEPER — the cards live here now, after the myth -->
+<section class="deeper">
+  <div class="sec-tag reveal">Earn Your Way In</div>
+  <div class="image-cta reveal">
+    <a target="_blank" rel="noopener" href="https://www.fanvue.com/yasmin_the_fox" class="img-card fanvue">
+      <div class="img-photo"></div>
+      <div class="img-text">
+        <div class="img-title">Enter Yasmin’s Den</div>
+        <div class="img-sub">Private. Unfiltered. Unlock the rest.</div>
+      </div>
+    </a>
+
+    <a target="_blank" rel="noopener" href="https://t.me/yasmin_da_fox" class="img-card telegram">
+      <div class="img-photo"></div>
+      <div class="img-text">
+        <div class="img-title">Chat on Telegram</div>
+        <div class="img-sub">Follow the drops. Get closer.</div>
+      </div>
+    </a>
   </div>
 </section>
 
